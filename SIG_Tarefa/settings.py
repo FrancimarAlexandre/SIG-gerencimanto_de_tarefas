@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q&@1(hr0j!fl%)kcsmny1(vk#b7q4=e#r!xkxhj^f8-hu=g+s2'
+SECRET_KEY = 'django-insecure-6u6%s3yzqif_)0&=li*u$8*on=to!-+hm5e4j%fhr!pefkzoz-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -25,8 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Auth_user.apps.AuthUserConfig',
-    'Tarefas.apps.TarefasConfig',
+    'auth_user.apps.AuthUserConfig',
+    'tarefa.apps.TarefaConfig',
 ]
 
 MIDDLEWARE = [
@@ -112,5 +112,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGOUT_REDIRECT_URL = 'login'
 LOGIN_REDIRECT_URL = 'homepage'
+LOGOUT_REDIRECT_URL = 'login'
