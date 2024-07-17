@@ -36,5 +36,4 @@
 
 4. *Pratique Testes:*
    - Ter um bom entendimento de como escrever e rodar testes em Django é crucial, pois muitas entrevistas valorizam candidatos que se preocupam com a qualidade e a confiabilidade do código.
-
-Lembre-se, a prática é fundamental. Fazer projetos práticos e resolver exercícios variados ajudará a se sentir mais confiante em entrevistas.
+   
