@@ -1,7 +1,5 @@
 # SIG-gerencimanto_de_tarefas
-Em uma entrevista para uma posição de desenvolvedor backend Django, um dos exercícios mais desafiadores (ou onde os candidatos mais se perdem) costuma envolver a implementação de uma funcionalidade completa que exige integração de vários conceitos. Por exemplo:
 
-### Exemplo de Exercício Complexo:
 *Tarefa:* Criar um sistema de gerenciamento de tarefas com autenticação de usuários.
 
 #### Requisitos:
