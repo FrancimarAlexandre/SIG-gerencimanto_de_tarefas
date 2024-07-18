@@ -1,45 +1,54 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bem-vindo {{ request.user.username }}</title>
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bem-vindo {{ request.user.username }}</title>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
+
 <body>
-    <h1>SIG-TAREFA</h1>
-    <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <input type="submit" value="sair">
-    </form>
-    <table>
-      <thead>
-        <tr>
-            <th>TÍTULO</th>
-            <th>DESCRIÇÃO</th>
-            <th>CRIADO EM </th>
-            <th>STATUS</th>
-            <th>DATA FINAL</th>
-            <th>AÇÃO</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for tarefa in contexto %}
-        <tr>
-            <td>{{ tarefa.titulo }}</td>
-            <td>{{ tarefa.descricao }}</td>
-            <td>{{ tarefa.created_at }}</td>
-            {% if not tarefa.status %}
-            <td>Pendente</td>
-            {% else %}
-            <td>Concluido</td>
-            {% endif %}
-            <td>{{ tarefa.finished_at }}</td>
-            <td>editar|excluir|confirmar</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+  <h1>SIG-TAREFA</h1>
+  <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="sair">
+  </form>
+  <a href="{% url 'create' %}"><button>criar nova tarefa</button></a>
+  <table>
+    <thead>
+      <tr>
+        <th>TÍTULO</th>
+        <th>DESCRIÇÃO</th>
+        <th>CRIADO EM </th>
+        <th>STATUS</th>
+        <th>DATA FINAL</th>
+        <th>AÇÃO</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tarefa in contexto %}
+      <tr>
+        <td>{{ tarefa.titulo }}</td>
+        <td>{{ tarefa.descricao }}</td>
+        <td>{{ tarefa.created_at }}</td>
+        {% if tarefa.status %}
+        <td>Concluido</td>
+        {% else %}
+        <td>Pendente</td>
+        {% endif %}
+        <td>{{ tarefa.finished_at }}</td>
+        <td>
+          <form action="{% url 'confirm' tarefa.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="confirmar">
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </body>
+
 </html>

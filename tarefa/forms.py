@@ -11,7 +11,7 @@ class CreateFormTarefa(forms.ModelForm):
         self.user = kwargs.pop('user', None)  # Pega o usuário do kwargs
         super().__init__(*args, **kwargs)
 
-    def save(self, commit=True):
+    def save_user(self, commit=True):
         instance = super().save(commit=False)
         if self.user:
             instance.usuario = self.user
