@@ -1,4 +1,4 @@
-{% load static %}
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,16 +6,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>bem-vindo {{ request.user.username }}</title>
-  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  
 </head>
 
 <body>
-  <h1>SIG-TAREFA</h1>
-  <form action="{% url 'logout' %}" method="post">
-    {% csrf_token %}
-    <input type="submit" value="sair">
-  </form>
-  <a href="{% url 'create' %}"><button>criar nova tarefa</button></a>
+  {% block conteudo %}
   <table>
     <thead>
       <tr>
@@ -49,6 +44,7 @@
       {% endfor %}
     </tbody>
   </table>
+  {% endblock %}
 </body>
 
 </html>
