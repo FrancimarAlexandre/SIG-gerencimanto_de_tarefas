@@ -34,12 +34,22 @@
         <td>Pendente</td>
         {% endif %}
         <td>{{ tarefa.finished_at }}</td>
-        <td>
-          <form action="{% url 'confirm' tarefa.id %}" method="post">
-            {% csrf_token %}
-            <input type="submit" value="confirmar">
+        <td class="action-buttons">
+          <form action="{% url 'delete' tarefa.id %}">
+              <button class="delete-btn" title="Excluir">
+                  <i class="fas fa-trash"></i>
+              </button>
           </form>
-        </td>
+          {% if not tarefa.status %}
+
+          <form action="{% url 'confirm' tarefa.id %}" method="post">
+              {% csrf_token %}
+              <button class="conf-btn" title="confirmar">
+                  <i class="fas fa-check"></i>
+              </button>
+          </form>
+          {% endif %}
+      </td>
       </tr>
       {% endfor %}
     </tbody>

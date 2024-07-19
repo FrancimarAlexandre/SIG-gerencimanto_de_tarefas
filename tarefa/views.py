@@ -27,3 +27,7 @@ def confirmar_tarefa(request,id_tarefa):
        tarefa.status = True
        tarefa.save()
     return redirect("homepage")
+@login_required
+def delete_tarefa(request,id_tarefa):
+    tarefa = get_object_or_404(Tarefa,id = id_tarefa).delete()
+    return redirect("homepage")
