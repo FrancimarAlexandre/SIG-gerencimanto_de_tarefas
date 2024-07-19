@@ -6,7 +6,9 @@ class CreateFormTarefa(forms.ModelForm):
     class Meta:
         model = Tarefa
         fields = ['titulo','descricao','finished_at']
-    
+        widgets = {
+            'finished_at': forms.DateInput(attrs={'type': 'date'}),
+        }
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user', None)  # Pega o usuário do kwargs
         super().__init__(*args, **kwargs)

@@ -7,7 +7,7 @@ class Tarefa(models.Model):
     titulo = models .CharField(max_length = 55)
     descricao = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    finished_at = models.DateField()
+    finished_at = models.DateField(auto_now= False)
     status = models.BooleanField(default = False)
 
     def __str__(self):
