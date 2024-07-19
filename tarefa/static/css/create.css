@@ -1,0 +1,77 @@
+/* Estilos Gerais para o Formulário */
+form.custom-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para os campos de texto, data e textarea */
+form.custom-form input[type="text"],
+form.custom-form input[type="date"],
+form.custom-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form.custom-form input[type="text"]:focus,
+form.custom-form input[type="date"]:focus,
+form.custom-form textarea:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* Estilos para o botão de envio */
+form.custom-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form.custom-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+form.custom-form input[type="submit"]:active {
+    background-color: #004085;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para labels */
+form.custom-form label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+button {
+    display: block;
+    width: 15%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004494;
+}

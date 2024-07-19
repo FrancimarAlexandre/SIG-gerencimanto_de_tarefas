@@ -9,6 +9,9 @@ class CreateFormTarefa(forms.ModelForm):
         widgets = {
             'finished_at': forms.DateInput(attrs={'type': 'date'}),
         }
+        labels = {
+            "finished_at":"Data de conclusão",
+        }
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user', None)  # Pega o usuário do kwargs
         super().__init__(*args, **kwargs)
