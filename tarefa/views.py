@@ -31,3 +31,21 @@ def confirmar_tarefa(request,id_tarefa):
 def delete_tarefa(request,id_tarefa):
     tarefa = get_object_or_404(Tarefa,id = id_tarefa).delete()
     return redirect("homepage")
+
+@login_required
+def update_tarefa(request,id_tarefa):
+    tarefa = get_object_or_404(Tarefa,pk = id_tarefa)
+    if request.method == 'POST':
+        titulo = request.POST.get('titulo')
+        descricao = request.POST.get('descricao')
+        data_tarefa = request.POST.get('finished_at')
+        if titulo and descricao and data_tarefa:
+                tarefa.titulo = titulo
+                tarefa.descricao = descricao
+                tarefa.finished_at = data_tarefa
+                tarefa.save()
+                return redirect ('homepage')
+        else:
+                return render(request, 'crud_tarefa/update.html', {'tarefa': tarefa, 'error': 'Todos os campos são obrigatórios.'})
+
+    return render(request,'crud_tarefa/update.html',{"tarefa":tarefa})

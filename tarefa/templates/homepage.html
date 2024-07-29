@@ -48,6 +48,13 @@
                   <i class="fas fa-check"></i>
               </button>
           </form>
+
+          <form action="{% url 'update' tarefa.id %}" method="post">
+            {% csrf_token %}
+            <button class="edit-btn" title="update">
+                <i class="fas fa-pencil"></i>
+            </button>
+        </form>
           {% endif %}
       </td>
       </tr>

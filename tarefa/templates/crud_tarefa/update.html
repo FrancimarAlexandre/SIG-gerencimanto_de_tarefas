@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro de tarefa</title>
+    <link rel="stylesheet" href="{% static 'css/update.css' %}">
+</head>
+<body>
+    <div class="container">
+        <form id="custom-form" class="custom-form" action="{% url 'update' tarefa.id %}" method="post">
+            <h2>Editar Tarefa</h2>
+            {% csrf_token %}
+            {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+            <input type="text" id="titulo" placeholder="Título da Tarefa" name="titulo" required value="{{ tarefa.titulo }}">
+            <textarea id="descricao" placeholder="Descrição da Tarefa" name="descricao" rows="4" required>{{ tarefa.descricao }}</textarea>
+            <input type="date" id="finished_at" name="finished_at" required value="{{ tarefa.finished_at|date:'Y-m-d' }}">
+            <button type="submit">Salvar</button>
+        </form>
+        <a href="{% url 'homepage' %}"><button>Voltar</button></a>
+    </div>
+</body>
+</html>
