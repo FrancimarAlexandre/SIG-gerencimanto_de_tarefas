@@ -6,7 +6,7 @@ from .models import Tarefa
 # Create your views here.
 @login_required
 def homepage(request):
-    tarefa = Tarefa.objects.filter(usuario = request.user)
+    tarefa = Tarefa.objects.filter(usuario = request.user).order_by("status")
     return render(request,'homepage.html',{"contexto":tarefa})
 
 @login_required
