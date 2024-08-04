@@ -13,12 +13,6 @@
    - Cada tarefa deve ter um título, descrição, data de criação e status (pendente ou concluída).
    - As tarefas devem ser associadas a usuários específicos (um usuário só pode ver e gerenciar suas próprias tarefas).
 
-3. *API RESTful:*
-   - Criar endpoints para todas as operações CRUD para tarefas.
-   - Proteger os endpoints para que apenas usuários autenticados possam acessar.
-
-4. *Testes:*
-   - Implementar testes unitários e de integração para garantir que o sistema funcione conforme esperado.
 
 #### Dicas para Não Se Perder:
 1. *Entenda a Estrutura do Projeto Django:*
